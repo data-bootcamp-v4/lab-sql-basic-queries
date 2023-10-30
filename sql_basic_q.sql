@@ -1,0 +1,33 @@
+#SAKILA SCHEMA WAS SELECTED AS DEFAULT, SO ALL TABLES ARE RUN FROM THERE UNLESS STATED OTHERWISE IN THE FROM CLAUSE
+#1
+SHOW TABLES;
+
+#2
+SELECT * FROM actor;
+SELECT * FROM film;
+SELECT * FROM customer;
+
+#3
+SELECT DISTINCT title FROM film;
+SELECT DISTINCT name AS language FROM language;
+SELECT DISTINCT first_name FROM staff;
+
+#4
+SELECT DISTINCT release_year FROM film;
+
+#5
+SELECT COUNT(*) FROM store;
+SELECT COUNT(*) FROM staff;
+SELECT COUNT(*) FROM inventory; #number of available movies
+SELECT COUNT(*) FROM rental; #number of rented movies
+SELECT COUNT(DISTINCT last_name) FROM actor;
+
+#6
+SELECT * FROM film
+ORDER BY length
+LIMIT 10;
+
+#7
+SELECT * FROM actor WHERE first_name="SCARLETT";
+SELECT * FROM film WHERE title LIKE '%ARMAGEDDON%' AND length>100;
+SELECT * FROM film WHERE special_features LIKE '%BEHIND THE SCENES%';
