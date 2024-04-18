@@ -4,7 +4,11 @@ SHOW TABLES;
 
 # 2 Retrieve all the data from the tables actor, film and customer
 SELECT * 
-FROM actor, film, customer;
+FROM actor;
+SELECT * 
+FROM film;
+SELECT * 
+FROM customer;
 
 # Retrieve the following columns from their respective tables:
 # 3.1 Titles of all films from the film table
@@ -25,11 +29,11 @@ FROM film;
 
 # 5. Counting records for database insights:
 # 5.1 Determine the number of stores that the company has.
-SELECT COUNT(store_id) AS num_stores
+SELECT COUNT(DISTINCT store_id) AS num_stores
 FROM store;
 
 # 5.2 Determine the number of employees that the company has.
-SELECT COUNT(staff_id) AS num_employees
+SELECT COUNT(DISTINCT staff_id) AS num_employees
 FROM staff;
 
 # 5.3 Determine how many films are available for rent and how many have been rented.
@@ -39,7 +43,7 @@ SELECT COUNT(*)
 FROM rental;
 
 # 5.4 Determine the number of distinct last names of the actors in the database
-SELECT DISTINCT count(last_name) 
+SELECT count(DISTINCT last_name) 
 FROM actor;
 
 # 6. Retrieve the 10 longest films.
