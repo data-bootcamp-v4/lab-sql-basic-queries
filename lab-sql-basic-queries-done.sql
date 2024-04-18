@@ -22,23 +22,23 @@ FROM customer;
 	FROM language;
 
 	#3.3 List of first names of all employees from the staff table
-	SELECT staff_id, first_name
+	SELECT first_name
 	FROM staff;
 
 	#Retrieve unique release years.
-	SELECT film_id, release_year
+	SELECT DISTINCT release_year
 	FROM film;
 
 # Counting records for database insights:
 	# 5.1 Determine the number of stores that the company has.
-    SELECT last_update, COUNT(store_id) as number_of_stores
-    FROM store
-    GROUP BY last_update;
+    
+    SELECT COUNT(DISTINCT store_id) AS number_of_stores
+	FROM store;
     
 	# 5.2 Determine the number of employees that the company has.
-    SELECT last_update, COUNT(staff_id) as number_of_employees
-    FROM staff
-    GROUP BY last_update;
+    SELECT COUNT(staff_id) as number_of_employees
+    FROM staff;
+    
     
 	# 5.3 Determine how many films are available for rent and how many have been rented.
     SELECT film_id, COUNT(rental_duration) AS have_been_rented
@@ -72,7 +72,7 @@ WHERE title LIKE "%ARMAGEDDON%" AND length > 100;
 # 7.3 Determine the number of films that include Behind the Scenes content
 SELECT COUNT(*) AS num_films_with_behind_the_scenes
 FROM film
-WHERE LIKE '%Behind the Scenes%'
+WHERE special_features LIKE '%Behind the Scenes%'
 
 # Requirements
 # Fork this repo
