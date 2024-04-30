@@ -24,8 +24,7 @@ SELECT * FROM film WHERE title like '%ARMAGEDDON%' AND length > 100;
 
 SELECT COUNT(DISTINCT last_name) FROM actor;
 
-SELECT COUNT(DISTINCT special_features) from film
-WHERE special_features = 'Behind the Scenes';
+SELECT COUNT(*) FROM film WHERE special_features LIKE '%Behind the Scenes%';
 
 
 SELECT *
