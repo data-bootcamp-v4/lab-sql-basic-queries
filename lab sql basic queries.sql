@@ -1,5 +1,6 @@
 -- 1. Display all available tables in the Sakila database.
 USE sakila;
+SHOW tables;
 
 -- 2. Retrieve all the data from the tables `actor`, `film` and `customer`.
 
@@ -27,17 +28,17 @@ SELECT DISTINCT release_year FROM film;
 -- 5. Counting records for database insights:
 	-- 5.1 Determine the number of stores that the company has.
     
-SELECT COUNT(*) AS num_stores FROM store;
+SELECT COUNT(DISTINCT store_id) FROM store;
     
 	-- 5.2 Determine the number of employees that the company has.
    
 SELECT COUNT(*) AS num_employees FROM staff;
    
 	-- 5.3 Determine how many films are available for rent and how many have been rented.
-SELECT 
-    SUM(CASE WHEN rental_duration > 0 THEN 1 ELSE 0 END) AS films_available_for_rent,
-    SUM(CASE WHEN rental_duration = 0 THEN 1 ELSE 0 END) AS films_rented
-FROM film;
+    
+SELECT COUNT(*) FROM film; 
+SELECT COUNT(*) FROM rental;
+
 
 	-- 5.4 Determine the number of distinct last names of the actors in the database.
     
