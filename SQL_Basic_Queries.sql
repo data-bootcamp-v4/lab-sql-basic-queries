@@ -1,4 +1,5 @@
 USE sakila;
+SHOW tables;
 -- Retrieve all the data from the tables actor, film and customer.
 SELECT * FROM actor;
 SELECT * FROM film;
