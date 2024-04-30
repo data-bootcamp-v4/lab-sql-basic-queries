@@ -1,8 +1,7 @@
 USE sakila;
 
 #1. Display all available tables in the Sakila database.
-SELECT * 
-FROM actor,address,category,city,country,customer,film,film_actor,film_category,film_text,inventory,language,payment,rental,staff,store;
+SHOW TABLES;
 
 #2. Retrieve all the data from the tables actor, film and customer.
 SELECT *
@@ -14,7 +13,7 @@ SELECT title
 FROM film;
 
 -- 3.2 List of languages used in films, with the column aliased as language from the language table
-SELECT name
+SELECT name AS language_type
 FROM language;
 
 -- 3.3 List of first names of all employees from the staff table
@@ -27,11 +26,11 @@ FROM film;
 
 #5 Counting records for database insights:
 -- 5.1 Determine the number of stores that the company has.
-SELECT sum(store_id)
+SELECT COUNT(DISTINCT store_id)
 FROM store;
 
 -- 5.2 Determine the number of employees that the company has.
-SELECT sum(active)
+SELECT COUNT(DISTINCT staff_id)
 FROM staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
@@ -44,7 +43,7 @@ SELECT COUNT(rental_id)
 FROM rental;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database
-SELECT COUNT(last_name)
+SELECT COUNT(DISTINCT last_name)
 FROM actor;
 
 #6 Retrieve the 10 longest films.
