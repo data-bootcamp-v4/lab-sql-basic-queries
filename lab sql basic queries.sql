@@ -15,7 +15,7 @@ SELECT title FROM film;
       
 	-- 3.2 List of languages used in films, with the column aliased as `language` from the `language` table
     
-SELECT language_id AS language FROM language;
+SELECT name AS language FROM language;
     
 	-- 3.3 List of first names of all employees from the `staff` table
     
@@ -32,7 +32,7 @@ SELECT COUNT(DISTINCT store_id) FROM store;
     
 	-- 5.2 Determine the number of employees that the company has.
    
-SELECT COUNT(*) AS num_employees FROM staff;
+SELECT COUNT(DISTINCT staff_id) FROM staff;
    
 	-- 5.3 Determine how many films are available for rent and how many have been rented.
     
