@@ -1,3 +1,4 @@
+USE sakila;
 -- 1. Display all available tables in the Sakila database.
 SHOW DATABASES;
 
