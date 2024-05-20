@@ -35,15 +35,21 @@ FROM store;
 SELECT COUNT(*)
 FROM staff;
 
-SELECT COUNT(rental_date) as rented, COUNT(return_date) as avaiable 
-FROM rental;
+SELECT inventory.COUNT(last_update) as rented,  rental.COUNT(return_date) as avaiable 
+FROM inventory
+JOIN rental 
+WHERE return_date IS NULL;
+
+
+SELECT *
+FROM inventory;
 
 SELECT COUNT(DISTINCT(last_name))
 FROM actor;
 
 Select *
 FROM film
-order by length ASC
+order by length desc
 LIMIT 10;
 
 Select *
@@ -52,7 +58,7 @@ Where first_name = "SCARLETT";
 
 SELECT *
 FROM film
-WHERE title like '%ARMAGEDDON%';
+WHERE title like '%ARMAGEDDON%' and length > 100;
 
 SELECT count(*)
 FROM film
