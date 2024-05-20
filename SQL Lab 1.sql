@@ -1,3 +1,5 @@
+SHOW TABLES;
+
 Select *
 FROM actor;
 
@@ -40,7 +42,7 @@ FROM store;
 SELECT COUNT(staff_id)
 FROM staff;
 
--- 5.3 INCOMPLETE
+-- 5.3
 SELECT DISTINCT(COUNT(inventory_id))
 FROM rental;
 
@@ -60,3 +62,11 @@ LIMIT 10;
 SELECT first_name
 FROM actor
 WHERE first_name = 'SCARLETT';
+
+SELECT *
+FROM film
+WHERE title LIKE '%ARMAGEDDON%' AND length>100;
+
+SELECT count(title)
+FROM film
+WHERE special_features LIKE '%Behind the Scenes%';
