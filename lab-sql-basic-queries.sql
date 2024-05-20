@@ -35,10 +35,9 @@ FROM store;
 SELECT COUNT(*)
 FROM staff;
 
-SELECT inventory.COUNT(last_update) as rented,  rental.COUNT(return_date) as avaiable 
-FROM inventory
-JOIN rental 
-WHERE return_date IS NULL;
+SELECT COUNT(return_date) as avaiable,  COUNT(return_date) as rented
+FROM rental 
+WHERE return_date IS NULL and return_date is NOT null;
 
 
 SELECT *
