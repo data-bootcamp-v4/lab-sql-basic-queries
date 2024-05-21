@@ -39,10 +39,8 @@ from staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 
-select count(rental_date) as rented, 
-count(return_date) as available 
-from rental
-WHERE return_date < last_update;
+select count(*) as Rented from rental where return_date is NULL;
+select count(*) as Available from rental where return_date is not NULL;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
 
@@ -66,4 +64,4 @@ Select * from film where length > 100 AND title Like '%ARMAGEDDON%';
 -- (BONUS) 7.3 Determine the number of films that include Behind the Scenes content
 Select count(special_features) as 'Special' 
 from film 
-where special_features Like '%Behind the Scenes%' ;
+where special_features Like '%Behind the Scenes%';
