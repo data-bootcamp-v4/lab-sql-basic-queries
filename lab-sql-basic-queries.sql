@@ -29,15 +29,14 @@ FROM staff;
 SELECT DISTINCT(release_year)
 FROM film;
 
-SELECT COUNT(*)
+SELECT COUNT(*) -- store_id
 FROM store;
 
-SELECT COUNT(*)
+SELECT COUNT(*) -- staff_id
 FROM staff;
 
-SELECT COUNT(return_date) as avaiable,  COUNT(return_date) as rented
-FROM rental 
-WHERE return_date IS NULL and return_date is NOT null;
+SELECT COUNT(*) as avaiable FROM rental where return_date is null;
+SELECT COUNT(*) as rented FROM rental where return_date is not null;
 
 
 SELECT *
