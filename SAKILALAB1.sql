@@ -1,5 +1,5 @@
 -- 1 
-SHOW Tables;
+SHOW tables;
 -- 2
 SELECT * FROM actor;
 SELECT * FROM film;
