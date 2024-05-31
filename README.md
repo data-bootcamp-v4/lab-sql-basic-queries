@@ -100,3 +100,47 @@ git push origin master
 ```
 
 - Paste the link of your lab in Student Portal.
+
+- -- 1. Display all available tables in the Sakila database
+
+
+-- 2. Retrieve all the data from the tables actor, film and customer.
+select * from sakila.actor; 
+select * from sakila.film;
+select * from sakila.customer;
+
+-- 3. Retrieve the following columns from their respective tables
+-- 3.1 Titles of all films from the film table
+select distinct title from film;
+
+-- 3.2 List of languages used in films, with the column aliased as language from the language table
+select * from sakila.language;
+select name as language from language;
+
+-- 3.3 List of first names of all employees from the staff table
+select * from sakila.staff;
+select distinct first_name from staff;
+
+-- 4. Retrieve unique release years.
+select * from sakila.film;
+select distinct release_year from film; 
+
+-- 5. Counting records for database insights:
+-- 5.1 Determine the number of stores that the company has
+select * from sakila.store;
+select max(store_id) from store;
+
+-- 5.2 Determine the number of employees that the company has
+select * from sakila.staff;
+select max(staff_id) from staff;
+
+-- 5.3 Determine how many films are available for rent and how many have been rented
+select * from sakila.rental;
+select max(rental_id) from rental;
+
+-- 5.4 Determine the number of distinct last names of the actors in the database
+select * from sakila.actor;
+select distinct last_name from actor;
+
+-- 6. Retrieve the 10 longest films
+select * from sakila.film;
