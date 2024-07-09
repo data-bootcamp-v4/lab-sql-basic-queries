@@ -37,20 +37,20 @@ from film;
 #Counting records for database insights:
 #5.1 Determine the number of stores that the company has.
 
-select count(store_id) as number_of_stores 
+select count( distinct store_id) as number_of_stores 
 from store;
 
 #5.2 Determine the number of employees that the company has.
 
-select count(staff_id) as number_of_employees
+select count(distinct staff_id) as number_of_employees
 from staff;
 
 #5.3 Determine how many films are available for rent and how many have been rented.
 
 select count(film_id)
-from inventory;
+from film;
 
-select count(distinct inventory_id)
+select count(rental_id)
 from rental;
 
 #5.4 Determine the number of distinct last names of the actors in the database.
@@ -84,3 +84,7 @@ where title like "%ARMAGEDDON%" and length > 100;
 #Hint: use LIKE operator. More information here.
 #7.3 Determine the number of films that include Behind the Scenes content
 
+
+select count(title) as number_of_films
+from film
+where special_features like "%Behind the Scenes%";
