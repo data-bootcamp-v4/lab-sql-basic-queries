@@ -1,5 +1,8 @@
 USE sakila;
 
+-- Display all available tables
+SHOW TABLES; 
+
 -- Retrieve all the data from the tables actor, film, and customer
 SELECT * FROM sakila.actor;
 SELECT * FROM sakila.film;
@@ -26,7 +29,6 @@ SELECT COUNT(DISTINCT staff_id) FROM sakila.staff;
 
 -- Determine how many films are available for rent
 SELECT COUNT(*) FROM sakila.inventory;
-SELECT COUNT(*) FROM sakila.film; 	-- from solution
 
 -- Determine how many films have been rented
 SELECT COUNT(*) FROM sakila.rental;
