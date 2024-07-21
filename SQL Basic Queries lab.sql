@@ -1,4 +1,4 @@
-	USE sakila;
+USE sakila;
 -- 1. Display all available tables in the Sakila database:
 SHOW TABLES;
 --  2.Retrieve all the data from the tables actor, film, and customer:
@@ -12,10 +12,9 @@ SELECT first_name FROM staff;
 -- 4. Retrieve unique release years from the film table:
 SELECT DISTINCT release_year FROM film;
  -- 5. Counting records for database insights:
- --- 
- SELECT COUNT(*) AS number_of_stores FROM store;
- SELECT COUNT(*) AS number_of_employees FROM staff;
- SELECT COUNT(*) AS available_films FROM inventory WHERE inventory_id NOT IN (SELECT inventory_id FROM rental);
+ SELECT COUNT(DISTINCT store_id) FROM store;
+ SELECT COUNT(DISTINCT staff_id) FROM staff;
+ SELECT COUNT(*) AS available_films FROM film;
  SELECT COUNT(DISTINCT inventory_id) AS rented_films FROM rental;
  SELECT COUNT(DISTINCT last_name) AS distinct_last_names FROM actor;
  -- 6. Retrieve the 10 longest films:
