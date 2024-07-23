@@ -2,6 +2,10 @@
 USE sakila;
 SHOW TABLES;
 
+SELECT * FROM actor;
+SELECT * FROM film;
+SELECT * FROM customer;
+
 --1)
 SELECT film.title FROM film;
 select * FROM film;
@@ -14,13 +18,14 @@ SELECT COUNT(store_id) FROM store;
 SELECT COUNT(staff_id) FROM staff;
 SELECT COUNT(film_id) AS 'Films available for rent' FROM inventory;
 SELECT COUNT(rental_id) AS 'Films rented' FROM rental;
-SELECT DISTINCT COUNT(actor.last_name) FROM actor;
+SELECT COUNT(DISTINCT actor.last_name) FROM actor;
 --4)
-SELECT film.title, film.length FROM film ORDER BY film.length DESC LIMIT 10;
+SELECT title, length FROM film ORDER BY length DESC LIMIT 10;
 --5)
 SELECT actor.first_name FROM actor;
-SELECT actor.first_name FROM actor WHERE actor.first_name = 'SCARLETT';
---6) 
-SELECT film.title, film.length FROM film WHERE film.title LIKE '%ARMAGEDDON' AND film.length > 100;
-SELECT film.special_features, film.title FROM film WHERE film.special_features LIKE '%Behind the Scenes';
+SELECT * FROM actor WHERE first_name = 'SCARLETT';
+
+SELECT * FROM film WHERE title LIKE '%ARMAGEDDON%' AND length > 100;
+
+SELECT COUNT(*) FROM film WHERE special_features LIKE '%Behind the Scenes%';
 
