@@ -1,29 +1,12 @@
-
-
-
-
-
-
-
-
-Use filtering techniques in order to:
-
-7.1 Retrieve all actors with the first name "SCARLETT".
-BONUS:
-
-7.2 Retrieve all movies that have ARMAGEDDON in their title and have a duration longer than 100 minutes.
-
-Hint: use LIKE operator. More information here.
-7.3 Determine the number of films that include Behind the Scenes content--
-
 USE sakila;
 SHOW tables
 FROM sakila;
 
 -- Retrieve all the data from the tables actor, film and customer --
 
-SELECT * 
-FROM actor, film, customer;
+SELECT * FROM actor; 
+SELECT * FROM film; 
+SELECT * FROM customer;
 
 -- Titles of all films from the film table--
 SELECT title
