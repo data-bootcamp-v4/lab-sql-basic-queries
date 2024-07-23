@@ -80,7 +80,7 @@ WHERE title LIKE  "%ARMAGEDDON%" AND length >100 ;
 
 7.3 Determine the number of films that include Behind the Scenes content--
 
-SELECT *
-FROM film
-WHERE special_features LIKE "%Behind the Scenes%";
 
+SELECT COUNT(*) 
+FROM film 
+WHERE special_features LIKE '%Behind the Scenes%';
