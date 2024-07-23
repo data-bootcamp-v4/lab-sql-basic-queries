@@ -26,21 +26,23 @@ SELECT DISTINCT release_year FROM film;
 
 -- 5. Counting records for database insights:
 -- 5.1 Determine the number of stores that the company has.
-SELECT COUNT(*) FROM store;
+SELECT COUNT(DISTINCT store.store_id) FROM store;
 
 -- 5.2 Determine the number of employees that the company has.
-SELECT COUNT(*) FROM staff;
-
+SELECT COUNT(DISTINCT staff_id) FROM staff;
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 SELECT COUNT(film.title) FROM film;
 
 SELECT COUNT(rental.inventory_id) FROM rental;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
-SELECT DISTINCT COUNT(actor.last_name) FROM actor;
+SELECT COUNT(DISTINCT actor.last_name) FROM actor;
 
 -- 6. Retrieve the 10 longest films.
-SELECT film.title, film.length FROM film ORDER BY length DESC;
+SELECT film.title, film.length
+FROM film
+ORDER BY length DESC
+LIMIT 10;
 
 -- 7. Use filtering techniques in order to:
 -- 7.1 Retrieve all actors with the first name "SCARLETT".
