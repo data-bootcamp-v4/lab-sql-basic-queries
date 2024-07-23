@@ -12,9 +12,9 @@ select * FROM film;
 SELECT language.name AS language FROM language;
 SELECT staff.first_name FROM staff;
 --2)
-SELECT DISTINCT film.release_year FROM film;
+SELECT DISTINCT release_year FROM film;
 --3)
-SELECT COUNT(store_id) FROM store;
+SELECT COUNT(DISTINCT store_id) FROM store;
 SELECT COUNT(staff_id) FROM staff;
 SELECT COUNT(film_id) AS 'Films available for rent' FROM inventory;
 SELECT COUNT(rental_id) AS 'Films rented' FROM rental;
