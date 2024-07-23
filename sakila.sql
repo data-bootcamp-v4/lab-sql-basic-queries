@@ -12,7 +12,7 @@ SELECT * FROM customer;
 SELECT title
 FROM film;
 --List of languages used in films, with the column aliased as language from the language table--
-SELECT name
+SELECT name AS language 
 FROM language;
 
 -- List of first names of all employees from the staff table --
@@ -26,20 +26,17 @@ FROM film;
 Counting records for database insights:
 
 -- Determine the number of stores that the company has --
-SELECT COUNT (store_id)
-FROM store;
+SELECT COUNT(DISTINCT store_id) FROM store;
 
 -- Determine the number of employees that the company has--
-SELECT COUNT(staff_id)
+SELECT COUNT(DISTINCT staff_id) 
 FROM staff;
 -- Determine how many films are available for rent and how many have been rented--
-SELECT COUNT (inventory_id)
-FROM inventory;
-SELECT DISTINCT COUNT (rental.inventory_id)
-FROM rental; 
+SELECT COUNT(*) 
+FROM rental;
 
 -- Determine the number of distinct last names of the actors in the database --
-SELECT DISTINCT last_name
+SELECT COUNT(DISTINCT last_name) 
 FROM actor;
 
 -- Retrieve the 10 longest films --
