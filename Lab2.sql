@@ -1,5 +1,7 @@
 -- Active: 1721292127253@@127.0.0.1@3306@sakila 
 --1. Display all available tables in the Sakila database.
+USE sakila;
+SHOW tables;
 --2. Retrieve all the data from the tables actor, film and customer.
 SELECT * FROM actor;
 SELECT * FROM address;
