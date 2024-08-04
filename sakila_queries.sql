@@ -40,8 +40,10 @@
     FROM staff;
         
 	#########- 5.3 Determine how many films are available for rent and how many have been rented.
-    SELECT * 
-    from staff_list;
+    SELECT count(*) as 'available for rent' 
+    FROM film;
+    SELECT count(*) as 'rented films'
+    FROM rental;
 
 	#- 5.4 Determine the number of distinct last names of the actors in the database.
     SELECT last_name, count(last_name) as 'Number of actors with the same last name'
