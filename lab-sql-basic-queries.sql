@@ -14,7 +14,7 @@ select* from customer;
 #	- 3.3 List of first names of all employees from the `staff` table
 
 select title from sakila.film;
-select name from sakila.language;
+SELECT name AS language FROM language;
 
 select first_name from sakila.staff;
 
@@ -28,13 +28,12 @@ select distinct(release_year) from film;
 #	- 5.3 Determine how many films are available for rent and how many have been rented.
 #	- 5.4 Determine the number of distinct last names of the actors in the database.
 
-select count(store_id) from store;
-select count(staff_id) from staff;
+SELECT COUNT(DISTINCT store_id) FROM store;
+SELECT COUNT(DISTINCT staff_id) from staff;
 
-select distinct(film_id) from film;
+SELECT COUNT(*) FROM film;
 
-select count(distinct(film_id))
-from rental r
+SELECT COUNT(*) FROM rental r
 inner join inventory i
 on r.inventory_id = i.inventory_id;
 
@@ -45,7 +44,7 @@ select count(distinct(last_name)) from actor;
 #	- 7.1 Retrieve all actors with the first name "SCARLETT".
 
 select distinct(length) from film order by length desc
-limit 10;
+limit 10SELECT title, length FROM film ORDER BY length DESC LIMIT 10;
 
 select first_name from actor where first_name ='scarlett';
 
@@ -58,6 +57,6 @@ select first_name from actor where first_name ='scarlett';
 
 select title from film where title like'%ARMAGEDDON%' and length>100;
 
-select count(special_features) from film where special_features like '%Behind the Scenes%';
+SELECT COUNT(*) FROM film WHERE special_features LIKE '%Behind the Scenes%';
 
 
