@@ -43,8 +43,7 @@ select count(distinct(last_name)) from actor;
 #7.  Use filtering techniques in order to:
 #	- 7.1 Retrieve all actors with the first name "SCARLETT".
 
-select distinct(length) from film order by length desc
-limit 10SELECT title, length FROM film ORDER BY length DESC LIMIT 10;
+SELECT title, length FROM film ORDER BY length DESC LIMIT 10;
 
 select first_name from actor where first_name ='scarlett';
 
