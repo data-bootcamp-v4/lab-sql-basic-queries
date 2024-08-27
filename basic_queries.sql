@@ -19,7 +19,7 @@ SELECT name AS language FROM sakila.language;
 SELECT first_name FROM sakila.staff;
 
 -- 4- Retrieve unique release years
-SELECT release_year FROM sakila.film;
+SELECT DISTINCT release_year FROM sakila.film;
 
 -- 5- Counting records for database insights:
 -- 5.1 Determine the number of stores that the company has.
@@ -29,7 +29,7 @@ SELECT COUNT(*) AS number_of_stores FROM sakila.store;
 SELECT COUNT(*) AS number_of_employees FROM sakila.staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
-SELECT COUNT(*) AS number_of_films FROM sakila.film;
+SELECT COUNT(DISTINCT inventory_id) AS rented_films FROM sakila.rental;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
 SELECT COUNT(DISTINCT last_name) AS distinct_last_name_actors FROM sakila.actor;
