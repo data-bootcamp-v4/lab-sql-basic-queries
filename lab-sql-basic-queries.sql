@@ -8,14 +8,14 @@ SELECT * FROM customer;
 
 -- 3. Retrieve the following columns from their respective tables:
 -- 3.1. Titles of all films from the film table
-SELECT title FROM flim;
+SELECT title FROM film;
 -- 3.2 List of languages used in films, with the column aliased as language from the language table
 SELECT name as language FROM language;
 -- 3.3 List of first names of all employees from the staff table
 SELECT first_name FROM staff;
 
 -- 4. Retrieve unique release years.
-SELECT DISTINCT release_year FROM flim ;
+SELECT DISTINCT release_year FROM film ;
 
 -- 5. Counting records for database insights:
 -- 5.1 Determine the number of stores that the company has.
@@ -24,14 +24,14 @@ SELECT COUNT(*) FROM store;
 SELECT COUNT(*) FROM staff;
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 SELECT COUNT(*) FROM inventory;
-SELECT SUM(ISNULL(return_date)) FROM rental;
+SELECT COUNT(*) FROM rental;
 -- 5.4 Determine the number of distinct last names of the actors in the database.
 SELECT count(DISTINCT last_name) FROM actor ;
 
 -- 6. Retrieve the 10 longest films.
 
 SELECT * FROM film
-ORDER BY length
+ORDER BY length DESC
 LIMIT 10;
 
 -- 7.Use filtering techniques in order to:
@@ -44,5 +44,5 @@ SELECT * FROM film
 where title like "%ARMAGEDDON%" and length >100;
 
 -- 7.3 Determine the number of films that include Behind the Scenes content
-SELECT * FROM film
+SELECT COUNT(*) FROM film
 where special_features like "%Behind the Scenes%";
