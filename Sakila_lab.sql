@@ -1,3 +1,6 @@
+-- Display all available tables in the Sakila database.
+USE sakila;
+
 SHOW TABLES;
 SELECT * FROM actor;
 SELECT * FROM film;
