@@ -76,3 +76,31 @@ FROM actor;
 
 
 -- ------------------------------------------------------------------------------------
+-- 6. Retrieve the 10 longest films.
+SELECT 
+	title,
+    length
+FROM film
+order by length DESC
+limit 10;
+
+
+-- ------------------------------------------------------------------------------------
+-- 7.Use filtering techniques in order to:
+-- 7.1 Retrieve all actors with the first name "SCARLETT".
+SELECT *
+FROM actor
+WHERE first_name = "SCARLETT";
+
+-- BONUS:
+-- 7.2 Retrieve all movies that have ARMAGEDDON in their title and have a duration longer than 100 minutes.
+-- Hint: use LIKE operator
+SELECT *
+FROM film
+WHERE title LIKE '%ARMAGEDDON%' AND length > 100;
+
+-- 7.3 Determine the number of films that include Behind the Scenes content
+SELECT 
+	COUNT(*) AS films_with_behind_scenes
+FROM film
+WHERE find_in_set("Behind the Scenes", special_features)
