@@ -28,7 +28,7 @@ FROM sakila.film as sf;
 
 -- 5. Counting records for database insights:
 --- 5.1 Determine the number of stores that the company has.
-SELECT COUNT(ss.store_id)
+SELECT COUNT(DISTINCT ss.store_id)
 FROM sakila.store as ss;
 -- > 2
 
@@ -43,7 +43,7 @@ from sakila.inventory as si;
 -- > 4581 copies of 958 different films
 
 --- 5.4 Determine the number of distinct last names of the actors in the database.
-SELECT COUNT(DISTINCT sa.first_name)
+SELECT COUNT(DISTINCT sa.last_name)
 FROM sakila.actor as sa;
 -- > 128 distinct names
 
@@ -68,5 +68,5 @@ WHERE (sf.title LIKE '%ARMAGEDDON%' and length >100);
 -- 7.3 Determine the number of films that include Behind the Scenes content
 SELECT COUNT(DISTINCT film_id) 
 FROM sakila.film as sf
-WHERE sf.special_features LIKE '%Scenes%'
+WHERE sf.special_features LIKE '%Behind the Scenes%'
 -- > 794 
