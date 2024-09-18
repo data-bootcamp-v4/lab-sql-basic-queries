@@ -42,6 +42,13 @@ SELECT
     SUM(CASE WHEN return_date IS NULL THEN 1 ELSE 0 END) AS Rented
 FROM rental;
 
+-- Cuidado, si quiero comprobar si está bien y hago esto:
+SELECT count(return_date)
+from rental
+WHERE return_date IS NULL
+--Da siempre 0 con IS NULL ya que no hace conteo de nulos. Para esto debería poner count(rental_id)
+
+
 --5.4 Determine the number of distinct last names of the actors in the database.
 SELECT DISTINCT(last_name)
 FROM actor
