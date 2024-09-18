@@ -64,4 +64,14 @@ LIMIT 10;
 	FROM sakila.actor AS sactor
 	WHERE sactor.first_name LIKE "SCARLETT";
     
-    -- BONUS 7.2/ 
+    -- BONUS
+    -- 7.2/ Retrieve all movies that have ARMAGEDDON in their title and have a duration longer than 100 minutes.
+    SELECT sfilm.title, sfilm.length
+    FROM sakila.film AS sfilm
+    WHERE sfilm.title LIKE "%ARMAGEDDON%" AND sfilm.length > 100;
+    
+    -- 7.3/ Determine the number of films that include Behind the Scenes content
+    SELECT sfilm.title, sfilm.special_features
+    FROM sakila.film AS sfilm
+    WHERE sfilm.special_features LIKE "%Behind the Scenes%";
+    
