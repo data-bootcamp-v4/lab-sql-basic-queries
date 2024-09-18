@@ -71,7 +71,7 @@ LIMIT 10;
     WHERE sfilm.title LIKE "%ARMAGEDDON%" AND sfilm.length > 100;
     
     -- 7.3/ Determine the number of films that include Behind the Scenes content
-    SELECT sfilm.title, sfilm.special_features
+    SELECT COUNT(*)
     FROM sakila.film AS sfilm
     WHERE sfilm.special_features LIKE "%Behind the Scenes%";
     
