@@ -8,7 +8,6 @@ SELECT name AS language FROM language;
 
 SELECT first_name FROM staff;
 
-USE sakila;
 
 SELECT DISTINCT release_year
 FROM film;
@@ -38,8 +37,6 @@ WHERE first_name = 'SCARLETT';
 SELECT title, length
 FROM film
 WHERE title LIKE '%ARMAGEDDON%' AND length > 100;
-
-
 
 SELECT COUNT(*) AS films_with_behind_the_scenes
 FROM film
