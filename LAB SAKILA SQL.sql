@@ -1,0 +1,8 @@
+CREATE DATABASE sakila;
+
+SHOW DATABASES;
+
+USE sakila;
+
+SHOW TABLES;
+
