@@ -1,22 +1,7 @@
 USE sakila;
 
 #1.Display all available tables in the Sakila database.
-SELECT * FROM sakila.actor;
-SELECT * FROM sakila.address;
-SELECT * FROM sakila.category;
-SELECT * FROM sakila.city;
-SELECT * FROM sakila.country;
-SELECT * FROM sakila.customer;
-SELECT * FROM sakila.film;
-SELECT * FROM sakila.film_actor;
-SELECT * FROM sakila.film_category;
-SELECT * FROM sakila.film_text;
-SELECT * FROM sakila.inventory;
-SELECT * FROM sakila.language;
-SELECT * FROM sakila.payment;
-SELECT * FROM sakila.rental;
-SELECT * FROM sakila.staff;
-SELECT * FROM sakila.store;
+SHOW tables;
 #2.Retrieve all the data from the tables actor, film and customer.
 SELECT * FROM sakila.actor;
 SELECT * FROM sakila.film;
@@ -46,7 +31,10 @@ SELECT * FROM sakila.staff;
 SELECT COUNT(staff_id) FROM sakila.staff;
 #5.3 Determine how many films are available for rent and how many have been rented.
 SELECT * FROM sakila.rental;
-SELECT COUNT(rental_date) as films_rented, COUNT(inventory_id) AS films_available FROM sakila.rental;
+SELECT COUNT(inventory_id) AS total_inventory FROM sakila.rental;
+SELECT COUNT(inventory_id) AS films_rented
+FROM sakila.rental
+WHERE return_date IS NULL OR return_date > NOW();
 #5.4 Determine the number of distinct last names of the actors in the database.
 SELECT * FROM sakila.actor;
 SELECT COUNT(DISTINCT(last_name)) AS dist_count_name FROM sakila.actor;
