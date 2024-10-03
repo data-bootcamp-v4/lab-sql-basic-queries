@@ -29,7 +29,7 @@ SELECT COUNT(store_id) FROM sakila.store;
 #5.2 Determine the number of employees that the company has.
 SELECT * FROM sakila.staff;
 SELECT COUNT(staff_id) FROM sakila.staff;
-#5.3 Determine how many films are available for rent and how many have been rented.
+#5.3 Determine how many films are available for rent and how guit many have been rented.
 SELECT * FROM sakila.rental;
 SELECT COUNT(inventory_id) AS total_inventory FROM sakila.rental;
 SELECT COUNT(inventory_id) AS films_rented
@@ -57,7 +57,7 @@ WHERE first_name="SCARLETT";
 #7.2 Retrieve all movies that have ARMAGEDDON in their title and have a duration longer than 100 minutes.
 SELECT * FROM sakila.film;
 SELECT * FROM sakila.film
-WHERE title LIKE '%ARMAGEDDON%' AND length<=100;
+WHERE title LIKE '%ARMAGEDDON%' AND length>100;
 
 #7.3 Determine the number of films that include Behind the Scenes content
 SELECT * FROM sakila.film;
