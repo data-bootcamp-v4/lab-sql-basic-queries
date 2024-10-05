@@ -1,0 +1,28 @@
+SHOW TABLES;
+
+SELECT * FROM actor;
+SELECT * FROM film;
+SELECT * FROM customer;
+
+SELECT title FROM film;
+SELECT name AS language FROM language;
+SELECT first_name FROM staff;
+
+SELECT release_year FROM film;
+
+SELECT DISTINCT release_year FROM film;
+
+SELECT COUNT(*) AS store_count FROM store;
+
+SELECT COUNT(DISTINCT film_id) FROM inventory;
+SELECT COUNT(DISTINCT inventory_id) FROM rental;
+
+SELECT COUNT(DISTINCT last_name) FROM actor;
+
+SELECT title, length FROM film ORDER BY length DESC LIMIT 10;
+
+SELECT first_name, last_name FROM actor WHERE first_name = 'Scarlett';
+
+SELECT title, length FROM film WHERE title LIKE '%ARMAGEDDON%' AND length > 100;
+
+SELECT COUNT(*) FROM film WHERE special_features LIKE '%Behind%';
