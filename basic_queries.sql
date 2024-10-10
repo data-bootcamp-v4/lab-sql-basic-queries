@@ -1,9 +1,11 @@
 USE sakila;
 
+#Display all available tables in the Sakila database.
 SHOW TABLES;
 
-SELECT title
-FROM film;
+#Retrieve all the data from the tables actor, film and customer.
+SELECT *
+FROM actor, film, customer;
 
 SELECT language_id, name
 FROM language;
@@ -29,6 +31,7 @@ FROM inventory;
 #Count rentals: 16044
 SELECT COUNT(rental_id)
 FROM rental;
+
 #number of distinct last names of actors: 121
 SELECT COUNT(DISTINCT last_name)
 FROM actor;
