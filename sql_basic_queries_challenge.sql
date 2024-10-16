@@ -44,7 +44,7 @@ select count(*) from film;
 
 -- 5.4. number of distinct last names of actors
 
-select distinct last_name from actor;
+select count(distinct last_name) from actor;
 
 -- 6. 10 longest films
 
@@ -60,4 +60,4 @@ select title, length from film where title like '%ARMAGEDDON%' and length > 100;
 
 -- 7.3. number of films with Behind the Scenes content
 
-select * from film where special_features = 'Behind the Scenes';
+select count(*) from film where special_features like '%Behind the Scenes%';
