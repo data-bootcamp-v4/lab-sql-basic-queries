@@ -30,6 +30,7 @@ SELECT count(DISTINCT(staff_id)) FROM sakila.staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 SELECT COUNT(DISTINCT(film_id)) FROM sakila.inventory; -- Unique film titles availabale to rent
+SELECT COUNT(film_id) FROM sakila.inventory; -- Total count of films availabale to rent
 SELECT COUNT(DISTINCT(film_id)) as titles_rented FROM sakila.rental; -- Film title that have been rented
 SELECT COUNT((rentail_id)) as films_rented FROM sakila.rental; -- Total number of films that have been rented
 
