@@ -31,12 +31,11 @@ SELECT COUNT(store_id) as number_of_stores FROM sakila.store;
 SELECT COUNT(staff_id) as number_of_employees FROM sakila.staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
-SELECT * FROM sakila.inventory;
-SELECT * FROM sakila.rental;
-SELECT COUNT(rental_id) as available_for_rent FROM sakila.rental;
+SELECT (SELECT COUNT(inventory_id) FROM sakila.inventory) - (SELECT COUNT(DISTINCT inventory_id) FROM sakila.rental) AS available_for_rent, 
+COUNT(DISTINCT inventory_id) AS rented FROM sakila.rental;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
-SELECT DISTINCT last_name FROM sakila.actor;
+SELECT COUNT(DISTINCT last_name) AS distinct_actor_last_names FROM sakila.actor;
 
 -- Retrieve the 10 longest films.
 SELECT * FROM sakila.film
@@ -51,5 +50,4 @@ WHERE length > 100 AND title LIKE '%ARMAGEDDON%';
 -- Hint: use LIKE operator. More information here.
 
 -- 7.3 Determine the number of films that include Behind the Scenes content
-SELECT * FROM sakila.film
-WHERE special_features LIKE '%Behind the Scenes%';
+SELECT COUNT(*) FROM sakila.film WHERE special_features LIKE '%Behind the Scenes%';
