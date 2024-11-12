@@ -14,7 +14,7 @@ FROM customer;
 select title
 from film;
 
-select name
+select name as language
 FROM language;
 
 select first_name
@@ -23,17 +23,15 @@ FROM staff;
 SELECT DISTINCT release_year
 FROM film;
 
-SELECT COUNT(*) AS number_of_stores
+SELECT COUNT(DISTINCT store_id) 
 FROM store;
 
-SELECT count(*) as number_of_emp
+SELECT COUNT(DISTINCT staff_id) 
 FROM staff;
 
 SELECT count(*) as number_of_rent
 FROM inventory;
 
-
-USE sakila;
 
 SELECT 
     (SELECT COUNT(DISTINCT f.film_id)
@@ -48,7 +46,7 @@ SELECT
      JOIN rental r ON i.inventory_id = r.inventory_id) AS films_rented;
 
 
-SELECT count(DISTINCT last_name) as apellidos
+SELECT count(DISTINCT last_name) as last_names
 FROM staff;
 
 select length, title
@@ -61,8 +59,9 @@ where first_name = "Scarlett";
 
 select *
 from film
-where title like "%ARMAGEDDON%" and length > 100;
+where title like "%ARMAGEDDON%" and length > 100
+limit 10;
 
-select *
+select count(*)
 from film
-where special_features like "%behind%"
+where special_features like "%Behind the Scenes%"
