@@ -42,7 +42,7 @@ SELECT * FROM inventory;
 SELECT COUNT(DISTINCT inventory_id) AS films_available FROM inventory;
 -- Films that have been rented
 SELECT * FROM inventory;
-SELECT COUNT(DISTINCT film_id) AS films_rented FROM inventory JOIN rental ON inventory.inventory_id = rental.inventory_id;
+SELECT COUNT(DISTINCT inventory_id) AS films_rented FROM inventory JOIN rental ON inventory.inventory_id = rental.inventory_id;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
 SELECT COUNT(DISTINCT last_name) FROM actor;
