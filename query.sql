@@ -49,9 +49,10 @@ SELECT
 SELECT count(DISTINCT last_name) as last_names
 FROM staff;
 
-select length, title
+select title
 from film
-order by length desc;
+order by length desc
+limit 10;
 
 select *
 from actor
