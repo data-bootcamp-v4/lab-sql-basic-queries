@@ -1,7 +1,7 @@
 USE sakila;
 
 SHOW FULL TABLES;
--- SELECT rental_date FROM sakila.rental LIMIT 10;
+
 SELECT min(length) as min_duration, max(length) as max_duration FROM sakila.film;
 
 SELECT FLOOR(AVG(length)) FROM sakila.film;
