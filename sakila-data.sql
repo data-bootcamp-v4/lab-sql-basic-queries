@@ -20,11 +20,11 @@ SELECT title FROM film;
 
 -- 3.2 Lista de idiomas utilizados en películas, con la columna con el alias language de la language tabla
 
-SELECT * FROM language;
+SELECT name AS language FROM language; 
 
 -- 3.3 Lista de nombres de todos los empleados de la staff tabla
 
-SELECT * FROM staff;
+SELECT first_name FROM staff;
 
 -- 4 Recuperar años de lanzamiento únicos.
 
@@ -45,6 +45,8 @@ SELECT COUNT(*) FROM staff;
 -- 5.3 Determinar cuántas películas están disponibles para alquilar y cuántas ya se han alquilado.
 
 SELECT COUNT(*) FROM inventory;
+
+SELECT COUNT(*) FROM rental;
 
 -- 5.4 Determinar el número de apellidos distintos de los actores en la base de datos.
 
