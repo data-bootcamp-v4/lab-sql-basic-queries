@@ -21,18 +21,17 @@ SELECT DISTINCT release_year FROM sakila.film;
 
 -- 5. Counting records for database insights:
 -- 5.1 Determine the number of stores that the company has.
-SELECT DISTINCT(COUNT(store_id)) FROM store;
+SELECT COUNT(DISTINCT(store_id)) FROM store;
 
 -- 5.2 Determine the number of employees that the company has.
-SELECT DISTINCT(COUNT(staff_id)) FROM sakila.staff;
+SELECT COUNT(DISTINCT(staff_id)) FROM sakila.staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 SELECT COUNT(inventory_id) AS nr_films FROM sakila.inventory; -- 4.581 
 SELECT COUNT(rental_id) AS nr_rentals FROM sakila.rental; -- 16.044 films have been rented
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
-SELECT DISTINCT COUNT(last_name) FROM sakila.actor; -- 200 actors ## ???
-SELECT COUNT(DISTINCT last_name) FROM sakila.actor; -- 201 actors ## ???
+SELECT COUNT(DISTINCT last_name) FROM sakila.actor; -- 201 actors
 
 -- 6. Retrieve the 10 longest films.
 SELECT title, length FROM sakila.film ORDER BY length DESC LIMIT 10;
