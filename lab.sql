@@ -13,8 +13,7 @@ SELECT first_name FROM staff;
 SELECT DISTINCT release_year
 FROM film;
 
-SELECT COUNT(*) AS number_of_stores
-FROM store;
+SELECT COUNT(DISTINCT store_id) AS number_of_stores FROM store;
 
 SELECT COUNT(*) AS number_of_employees
 FROM staff;
