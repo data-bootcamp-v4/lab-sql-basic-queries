@@ -11,8 +11,8 @@ SELECT name AS language FROM language;
 select * from staff;
 select first_name from staff;
 select distinct release_year from film;
-select COUNT(*) as total_store from store;
-select count(*) as total_employee from staff;
+SELECT COUNT(DISTINCT store_id) FROM store;
+SELECT COUNT(DISTINCT staff_id) FROM staff;
 SELECT 
     (SELECT COUNT(*) FROM inventory WHERE inventory_id NOT IN (SELECT inventory_id FROM rental)) AS available_movies,
     (SELECT COUNT(DISTINCT inventory_id) FROM rental) AS rented_movies;
