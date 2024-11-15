@@ -99,4 +99,5 @@ git commit -m "Solved lab"
 git push origin master
 ```
 
+- Please only include a .sql file with your solution, not the sakila files
 - Paste the link of your lab in Student Portal.
