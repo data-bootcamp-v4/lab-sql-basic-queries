@@ -30,20 +30,17 @@ SELECT DISTINCT release_year FROM film;
 -- 5.Counting records for database insights:
 -- 5.1 Determine the number of stores that the company has.
 
-SELECT COUNT(store_id) FROM store;
+SELECT COUNT(DISTINCT(store_id)) FROM store;
 
 -- 5.2 Determine the number of employees that the company has.
  
-SELECT COUNT(staff_id) FROM staff;
+SELECT COUNT(DISTINCT(staff_id)) FROM staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 
-SELECT COUNT(rental_id) AS number_of_films_rented,
-	   COUNT(inventory_id) AS number_of_films_for_rent
+SELECT COUNT(*) AS rented,
+	   SUM(isnull(rental_date)) AS available
 FROM rental;
-
-
-SELECT SUM(isnull(rental_id)) FROM rental;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
 
