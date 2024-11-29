@@ -1,0 +1,56 @@
+USE SAKILA;
+--- 1
+SHOW TABLES FROM SAKILA;
+--- 2
+SELECT *
+FROM ACTOR;
+SELECT * FROM FILM;
+SELECT * FROM CUSTOMER;
+--- 3.1
+SELECT TITLE FROM FILM;
+--- 3.2
+SELECT NAME FROM LANGUAGE;
+--- 3.3
+SELECT FIRST_NAME, LAST_NAME FROM STAFF;
+
+--- 4
+SELECT DISTINCT RELEASE_YEAR FROM FILM;
+
+--- 5.1
+SELECT * FROM STORE;
+SELECT COUNT(*) FROM sakila.store;
+--- 5.2
+SELECT * FROM STAFF;
+SELECT COUNT(*) FROM sakila.staff;
+--- 5.3
+SELECT * FROM INVENTORY;
+SELECT * FROM RENTAL;
+--- PARA ALQUILAR
+SELECT COUNT(*) AS disponibles
+FROM sakila.inventory as i
+LEFT JOIN sakila.rental as r
+ON i.inventory_id = r.inventory_id;
+--- ALQUILADAS
+SELECT COUNT(*) AS alquiladas
+FROM sakila.rental;
+
+--- 5.4
+SELECT * FROM ACTOR;
+SELECT COUNT(DISTINCT LAST_NAME) AS APELLIDOS_DIFERENTES
+FROM sakila.actor;
+
+--- 6
+SELECT * FROM FILM;
+SELECT * FROM sakila.film
+ORDER BY length DESC
+LIMIT 10;
+
+--- 7.1
+SELECT * FROM sakila.actor
+WHERE first_name = 'SCARLETT';
+--- 7.2
+SELECT * FROM sakila.film
+WHERE title LIKE '%ARMAGEDDON%' AND length > 100;
+--- 7.3
+SELECT * FROM sakila.film
+WHERE special_features LIKE '%Behind the Scenes%';
