@@ -33,7 +33,6 @@ Before this starting this lab, you should have learnt about:
 
 </details>
 
-
 ## Introduction
 
 Welcome to the SQL Basic Queries lab!
@@ -64,6 +63,7 @@ Use the sakila database to do the following tasks:
 	- 3.3 List of first names of all employees from the `staff` table
 
 4. Retrieve unique release years.
+
 5. Counting records for database insights:
 	- 5.1 Determine the number of stores that the company has.
 	- 5.2 Determine the number of employees that the company has.
