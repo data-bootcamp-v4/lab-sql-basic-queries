@@ -52,7 +52,7 @@ You can also refer to the Entity Relationship Diagram (ERD) of the database to g
 
 <br><br>
 
-
+l
 ## Challenge
 Use the sakila database to do the following tasks:
 
