@@ -11,7 +11,7 @@ SELECT * FROM customer;
 #Retrieve: 1. Titles of all films from the film table 2. List of languages used in films, with the column aliased as language from the language table 3. List of first names of all employees from the staff table
 
 SELECT title FROM film;
-SELECT name FROM language;
+SELECT name AS language FROM language;
 SELECT first_name FROM staff;
 
 #Retrieve unique release years.
