@@ -25,16 +25,15 @@ SELECT DISTINCT release_year FROM film;
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 -- 5.4 Determine the number of distinct last names of the actors in the database.
 
-SELECT count(store_id) as number_of_stores FROM store;
+SELECT count(DISTINCT store_id) as number_of_stores FROM store;
 SELECT count(staff_id) as Number_of_employees FROM staff;
-SELECT COUNT(DISTINCT inventory_id) AS rented_films
-FROM rental;
-SELECT count(distinct film_id) FROM inventory;
-SELECT DISTINCT last_name FROM actor;
+SELECT COUNT(*) FROM film;
+SELECT COUNT(*) FROM rental;
+SELECT  count(DISTINCT last_name) FROM actor;
 
 -- Retrieve the 10 longest films.
 
-SELECT distinct  length  FROM film
+SELECT  title,   length  FROM film
 order by length desc
 limit 10;
 
