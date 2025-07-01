@@ -22,15 +22,15 @@ SELECT first_name FROM sakila.staff;
 SELECT DISTINCT release_year FROM sakila.film;
 
 -- #5
-SELECT COUNT(store_id) FROM sakila.store;
+SELECT COUNT(DISTINCT store_id) FROM sakila.store;
 
-SELECT COUNT(staff_id) FROM sakila.staff;
+SELECT COUNT(DISTINCT staff_id) FROM sakila.staff;
 
-SELECT COUNT(film_id) FROM sakila.film;
+SELECT COUNT(*) FROM sakila.film;
 
-SELECT COUNT(rental_duration) FROM sakila.film;
+SELECT COUNT(*) FROM sakila.rental;
 
-SELECT DISTINCT last_name FROM sakila.staff;
+SELECT DISTINCT last_name FROM sakila.actor;
 
 -- #6
 SELECT title,length FROM sakila.film
@@ -38,12 +38,12 @@ ORDER BY length DESC LIMIT 10;
 
 -- #7
 SELECT * FROM sakila.actor
-WHERE first_name LIKE 'SCARLETT';
+WHERE first_name = 'SCARLETT';
 
 SELECT * FROM sakila.film
 WHERE title LIKE '%ARMAGEDDON%' and length > 100;
 
-SELECT * FROM sakila.film
+SELECT COUNT(*) FROM sakila.film
 WHERE special_features LIKE '%Behind the scenes%';
 
 
