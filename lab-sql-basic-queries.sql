@@ -23,12 +23,12 @@ FROM film;
 
 -- 3.2 List of languages used in films, with the column aliased as language from the language table
 SELECT 
-	DISTINCT(name)
+	DISTINCT(name) AS language
 FROM language;
 
 -- 3.3 List of first names of all employees from the staff table
 SELECT 
-	DISTINCT(first_name)
+	first_name
 FROM 
 	staff;
     
@@ -40,19 +40,19 @@ FROM film;
 -- Counting records for database insights:
 -- 5.1 Determine the number of stores that the company has.
 SELECT 
-	COUNT(store_id)
+	COUNT(DISTINCT(store_id))
 FROM 
 	store;
     
 -- 5.2 Determine the number of employees that the company has.
 SELECT 
-	COUNT(staff_id)
+	COUNT(DISTINCT(staff_id))
 FROM 
 	staff;
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 -- available for renting: 4581 different movies
 SELECT 
-	COUNT(inventory_id)
+	COUNT(*)
 FROM
 	inventory;
 
@@ -91,6 +91,6 @@ WHERE title LIKE "%%ARMAGEDDON%%" AND length > 100;
 
 -- 7.3 Determine the number of films that include Behind the Scenes content
 SELECT 
-	*
+	COUNT(*)
 FROM film
 WHERE special_features LIKE "%%Behind the Scenes%%"
