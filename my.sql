@@ -36,5 +36,5 @@ SELECT title FROM film ORDER BY length DESC LIMIT 10;
 SELECT first_name FROM actor WHERE first_name='SCARLETT';
 #7.2
 SELECT * FROM film WHERE title LIKE '%ARMAGEDDON%' AND length > 100;
-#7.3
+# BONUS 7.3
 SELECT COUNT(*) as films_with_bts FROM film WHERE special_features LIKE '%Behind the Scenes%';
