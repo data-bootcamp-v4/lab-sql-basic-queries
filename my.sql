@@ -27,14 +27,14 @@ SELECT COUNT(*) as films_for_rent FROM film;
 SELECT COUNT(*) as Films_rented FROM rental;
 
 #5.4
-SELECT DISTINCT last_name FROM actor;
+SELECT COUNT(DISTINCT last_name) FROM actor;
 
 #6
-SELECT length FROM film ORDER BY length DESC LIMIT 10;
+SELECT title FROM film ORDER BY length DESC LIMIT 10;
 
 #7 7.1
-SELECT first_name FROM actor WHERE first_name='scarlett';
+SELECT first_name FROM actor WHERE first_name='SCARLETT';
 #7.2
 SELECT * FROM film WHERE title LIKE '%ARMAGEDDON%' AND length > 100;
 #7.3
-SELECT COUNT(*) as films_with_bts FROM film WHERE special_features LIKE '%behind the scenes%';
+SELECT COUNT(*) as films_with_bts FROM film WHERE special_features LIKE '%Behind the Scenes%';
