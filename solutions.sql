@@ -1,6 +1,5 @@
 -- solutions.sql
 -- SQL Basic Queries Lab (Sakila)
--- Make sure Sakila is installed before running these queries.
 
 USE sakila;
 
@@ -12,7 +11,8 @@ SELECT * FROM actor;
 SELECT * FROM film;
 SELECT * FROM customer;
 
--- 3) Retrieve specific columns
+-- 3) Retrieve the following columns from their respective tables:
+
 -- 3.1 Titles of all films from the film table
 SELECT title
 FROM film;
@@ -29,7 +29,8 @@ FROM staff;
 SELECT DISTINCT release_year
 FROM film;
 
--- 5) Counting records for database insights
+-- 5) Counting records for database insights:
+
 -- 5.1 Determine the number of stores that the company has.
 SELECT COUNT(*) AS number_of_stores
 FROM store;
@@ -39,20 +40,14 @@ SELECT COUNT(*) AS number_of_employees
 FROM staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
--- Available for rent: inventory items (each copy of a film)
+
+-- Available for rent (inventory items)
 SELECT COUNT(*) AS available_for_rent_inventory_items
 FROM inventory;
 
--- Rented: total rental records
+-- Total rentals
 SELECT COUNT(*) AS total_rentals
 FROM rental;
-
--- (Optional extra insight) distinct films in inventory vs distinct films ever rented
-SELECT
-  COUNT(DISTINCT inventory.film_id) AS distinct_films_in_inventory,
-  (SELECT COUNT(DISTINCT inventory2.film_id)
-   FROM rental r
-   JOIN inventory inventory2 ON r.inventory_id = inventory2.inventory_id) AS distinct_films_ever_rented;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
 SELECT COUNT(DISTINCT last_name) AS distinct_actor_last_names
@@ -64,13 +59,15 @@ FROM film
 ORDER BY length DESC, title ASC
 LIMIT 10;
 
--- 7) Filtering techniques
+-- 7) Filtering techniques:
+
 -- 7.1 Retrieve all actors with the first name "SCARLETT".
 SELECT *
 FROM actor
 WHERE first_name = 'SCARLETT';
 
--- BONUS
+-- BONUS:
+
 -- 7.2 Retrieve all movies that have ARMAGEDDON in their title and have a duration longer than 100 minutes.
 SELECT title, length
 FROM film
@@ -79,7 +76,7 @@ WHERE title LIKE '%ARMAGEDDON%'
 ORDER BY length DESC;
 
 -- 7.3 Determine the number of films that include Behind the Scenes content.
--- In Sakila, special_features is a SET that can include 'Behind the Scenes'
 SELECT COUNT(*) AS films_with_behind_the_scenes
 FROM film
 WHERE FIND_IN_SET('Behind the Scenes', special_features) > 0;
+
