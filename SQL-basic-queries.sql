@@ -37,21 +37,23 @@ FROM film;
 -- 5. Counting records for database insights
 -- 5.1 Determine the number of stores that the company has.
 
-SELECT COUNT(*) AS num_stores
+SELECT COUNT(DISTINCT store_id) AS num_stores
 FROM store;
 
 -- 5.2. Determine the number of employees that the company has.
 
-SELECT COUNT(*) num_staff
+SELECT COUNT(DISTINCT staff_id) AS num_staff
 FROM staff;
 
 -- 5.3. Determine how many films are available for rent and how many have been rented. 
 
+-- Total de películas en inventario
 SELECT COUNT(*) AS total_films
 FROM inventory;
 
-SELECT COUNT( DISTINCT inventory_id) AS rented_film 
-FROM inventory;
+-- Total de películas que han sido alquiladas al menos una vez
+SELECT COUNT(DISTINCT inventory_id) AS rented_films
+FROM rental;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
 
@@ -60,7 +62,7 @@ FROM actor;
 
 -- 6.Retrieve the 10 longest films.
 
-SELECT length
+SELECT title, length
 FROM film
 ORDER BY length DESC
 LIMIT 10;
