@@ -56,6 +56,7 @@ COUNT(DISTINCT(last_name))
 FROM actor;
 
 SELECT
+title,
 length
 FROM film
 ORDER BY length DESC
