@@ -1,6 +1,10 @@
 USE sakila;
 
--- 2. Display de las tablas
+-- 1 Display de tablas
+SHOW TABLES;
+
+
+-- 2. retrieve de las tablas
 
 SELECT *
 FROM actor;
