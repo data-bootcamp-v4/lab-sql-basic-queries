@@ -42,7 +42,7 @@ WHERE r.return_date IS NULL;
 WHERE r.return_date IS NOT NULL);
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
-SELECT DISTINCT a.last_name FROM sakila.actor AS a;
+SELECT COUNT(DISTINCT a.last_name) FROM sakila.actor AS a;
 
 -- 6. Retrieve the 10 longest films.
 SELECT f.title, f.length FROM sakila.film AS f
