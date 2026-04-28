@@ -6,13 +6,19 @@ SHOW tables;
 
 -- accedo a la informacion de las tablas actor, film y customer
 SELECT * 
-FROM actor, film, customer;
+FROM actor;
+
+SELECT * 
+FROM film;
+
+SELECT * 
+FROM customer;
 
 -- accedo a cierta informacion de dentro de distintas tablas
 SELECT title
 FROM film;
 
-SELECT name
+SELECT name AS language
 FROM language;
 
 SELECT first_name
@@ -26,11 +32,11 @@ FROM film;
 SELECT COUNT(DISTINCT store_id)
 FROM store;
 
-SELECT COUNT(DISTINCT staff_id)
+SELECT COUNT(staff_id)
 FROM staff;
 
-SELECT COUNT(inventory_id) AS Available_films
-FROM inventory; 
+SELECT COUNT(DISTINCT inventory_id) AS Available_films
+FROM rental; 
 
 SELECT COUNT(rental_id)
 FROM rental;
