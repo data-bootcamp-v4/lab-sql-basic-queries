@@ -48,12 +48,12 @@ WHERE staff_id IS NOT NULL;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
 -- 5.3.1 Determine how many films are available for rent
-SELECT COUNT(DISTINCT film_id) as amount_of_avaliable_films
+SELECT COUNT(film_id) as amount_of_avaliable_films
 FROM inventory
 WHERE film_id IS NOT NULL;
 
 -- 5.3.2 Determine how many films have been rented
-SELECT COUNT(DISTINCT film_id) as amount_of_rented_films
+SELECT COUNT(film_id) as amount_of_rented_films
 FROM inventory
 WHERE inventory_id IN (SELECT inventory_id from rental);
   
@@ -79,6 +79,6 @@ FROM film
 WHERE title IS NOT NULL AND length > 100 AND  title LIKE '%ARMAGEDDON%';
 
 -- 7.3 Determine the number of films that include Behind the Scenes content
-SELECT title, special_features
+SELECT COUNT(title) as 'count of titles with Behind the Scenes content'
 FROM film
 WHERE special_features LIKE '%Behind the Scenes%';
