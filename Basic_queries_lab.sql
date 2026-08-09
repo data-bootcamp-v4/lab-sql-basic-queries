@@ -34,10 +34,10 @@ SELECT * FROM sakila.store;
 SELECT title FROM sakila.film;
 
 -- 3.2 List of languages used in films, with the column aliased as language from the language table
-SELECT name as 'language from the language table' FROM sakila.language;
+SELECT name as 'language' FROM sakila.language;
 
 -- 3.3 List of first names of all employees from the staff table
-SELECT first_name, last_name FROM sakila.staff;
+SELECT first_name FROM sakila.staff;
 
 
 -- 4. Retrieve unique release years.
@@ -47,24 +47,37 @@ SELECT DISTINCT release_year FROM sakila.film;
 -- 5. Counting records for database insights:
 
 -- 5.1 Determine the number of stores that the company has.
-SELECT count(store_id) FROM sakila.store;
+SELECT distinct count(store_id) FROM sakila.store;
 
 -- 5.2 Determine the number of employees that the company has.
-SELECT count(staff_id) FROM sakila.staff;
+SELECT distinct count(staff_id) FROM sakila.staff;
 
 -- 5.3 Determine how many films are available for rent and how many have been rented.
+-- first attempt
+-- SELECT count(rental_date), count(return_date) FROM sakila.rental;
 
-SELECT count(rental_date), count(return_date) FROM sakila.rental;
+-- observing timeline
+-- SELECT last_update FROM sakila.inventory; -- '2006-02-15 05:09:17'
+
+-- quering tables
+-- SELECT return_date FROM sakila.rental;
+
+-- Possible solution in separate steps
+SELECT count(return_date) AS 'films available' FROM sakila.rental
+WHERE rental_date < return_date;
+
+SELECT count(rental_date) AS 'films rented' FROM sakila.rental
+WHERE return_date < rental_date;
 
 -- 5.4 Determine the number of distinct last names of the actors in the database.
-SELECT DISTINCT last_name FROM sakila.actor;
+SELECT DISTINCT count(last_name) FROM sakila.actor;
 
 -- 6. Retrieve the 10 longest films.
 SELECT title, length FROM sakila.film
 ORDER BY length DESC
 LIMIT 10;
 
--- Use filtering techniques in order to: 7.1 Retrieve all actors with the first name "SCARLETT".
+-- 7. Use filtering techniques in order to: 7.1 Retrieve all actors with the first name "SCARLETT".
 SELECT * FROM sakila.actor
 WHERE first_name = 'SCARLETT';
 
