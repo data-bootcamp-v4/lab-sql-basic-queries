@@ -29,7 +29,9 @@ SELECT COUNT(*) AS total_stores FROM store;
 SELECT COUNT(*) AS total_staff FROM staff;
 
 -- 5.3 Películas disponibles para alquilar vs. alquiladas
-SELECT COUNT(*) AS available_films FROM inventory;
+SELECT COUNT(*) AS available_films FROM film;
+-- Más preciso: solo títulos con al menos una copia en inventario (958)
+-- SELECT COUNT(DISTINCT film_id) AS available_films FROM inventory;
 SELECT COUNT(*) AS rented_films FROM rental;
 
 -- 5.4 Apellidos distintos de los actores
